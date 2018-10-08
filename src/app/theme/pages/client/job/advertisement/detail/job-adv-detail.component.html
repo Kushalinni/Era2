@@ -1,0 +1,479 @@
+<!-- START: Subheader -->
+<div class="m-subheader" appunwraptag="">
+	<div class="d-flex align-items-center">
+		<div class="mr-auto">
+			<h3 class="m-subheader__title m-subheader__title--separator">
+				{{title1}}
+			</h3>
+			<ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+				<li class="m-nav__item m-nav__item--home">
+					<a href="#" class="m-nav__link m-nav__link--icon">
+						<i class="m-nav__link-icon la la-home"></i>
+					</a>
+				</li>
+				<li class="m-nav__separator">
+					-
+				</li>
+				<li class="m-nav__item">
+					<a href="" class="m-nav__link">
+						<span class="m-nav__link-text">
+							{{title2}}
+						</span>
+					</a>
+				</li>
+				<li class="m-nav__separator">
+					-
+				</li>
+				<li class="m-nav__item">
+					<a href="" class="m-nav__link">
+						<span class="m-nav__link-text">
+							Position
+						</span>
+					</a>
+				</li>
+				<!-- <li class="m-nav__separator">
+					-
+				</li> -->
+				<li class="m-nav__item">
+					<a href="" class="m-nav__link">
+						<span class="m-nav__link-text">
+							<!-- # {{posId2}} -->
+						</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div>
+			<div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" m-dropdown-toggle="hover"
+			 aria-expanded="true">
+			</div>
+		</div>
+	</div>
+</div>
+<!-- END: Subheader -->
+
+<div class="m-content">
+	<div class="row">
+		<div class="col-lg-12">
+			<div *ngIf="applyAdvPos" class="alert {{advPosStyle}} m-alert m-alert--default " role="alert">
+				<strong>{{advPosMsg}}</strong>
+			</div>
+			<div *ngIf="applyBtnDisplay" class="m-button-advert">
+				<!--begin::advertise buttons -->
+				<button id="advertise-job" type="button" class="btn m-btn--pill btn-primary btn-lg m-btn m-btn--custom" data-toggle="modal"
+				 data-target="#modal_to_apply">{{btnApply}}
+				</button>
+				<!--end::advertise buttons -->
+			</div>
+		</div>
+		<div class="col-lg-12">
+			<!--begin::Portlet-->
+			<div class="m-portlet m-portlet--full-height">
+				<!--begin::Section-->
+				<div class="m-accordion m-accordion--bordered" id="m_accordion_1" role="tablist">
+					<!--begin::Item:info-->
+					<div class="m-accordion__item">
+						<div class="m-accordion__item-head" role="tab" id="m_accordion_1_item_1_head" data-toggle="collapse" href="#m_accordion_1_item_1_body"
+						 aria-expanded="    false">
+							<span class="m-accordion__item-mode"></span>
+							<span class="m-accordion__item-title m-accordian__item-mode-title">
+								{{tab1Title}}
+							</span>
+							<span class="m-accordion__item-icon">
+								<i class="fa flaticon-notes"></i>
+							</span>
+						</div>
+						<div class="m-accordion__item-body show" id="m_accordion_1_item_1_body" role="tabpanel" aria-labelledby="m_accordion_1_item_1_head">
+							<div class="m-accordion__item-content">
+								<!-- start: JOB INFO -->
+								<table class="table table-bordered">
+									<tr>
+										<td style="width: 30%">
+											Job Title
+										</td>
+										<td>
+											{{data.profile && data.profile[0].job_title}}
+										</td>
+									</tr>
+									<tr>
+										<td style="width: 30%">
+											Position
+										</td>
+										<td>
+											{{data.profile && data.profile[0].position}}
+										</td>
+									</tr>
+									<tr>
+										<td style="width: 30%">
+											Location
+										</td>
+										<td>
+											{{data.profile && data.profile[0].location}}
+										</td>
+									</tr>
+									<tr>
+										<td style="width: 30%">
+											Company
+										</td>
+										<td>
+											{{data.profile && data.profile[0].company}}
+										</td>
+									</tr>
+									<tr>
+										<td style="width: 30%">
+											Application Period
+										</td>
+										<td>
+											{{data.profile && data.profile[0].start | date:'dd/MMM/yyyy'}} - {{data.profile && data.profile[0].close | date:'dd/MMM/yyyy'}}
+										</td>
+									</tr>
+								</table>
+								<!-- end: JOB INFO -->
+							</div>
+						</div>
+					</div>
+					<!--end::Item:info-->
+					<!--begin::Item:purpose-->
+					<div class="m-accordion__item">
+						<div class="m-accordion__item-head collapsed" role="tab" id="m_accordion_1_item_2_head" data-toggle="collapse" href="#m_accordion_1_item_2_body"
+						 aria-expanded="    false">
+							<span class="m-accordion__item-mode"></span>
+							<span class="m-accordion__item-title m-accordian__item-mode-title">
+								{{tab3Title}}
+							</span>
+							<span class="m-accordion__item-icon">
+								<i class="fa flaticon-list-1"></i>
+							</span>
+						</div>
+						<div class="m-accordion__item-body collapse" id="m_accordion_1_item_2_body" role="tabpanel" aria-labelledby="m_accordion_1_item_2_head">
+							<div class="m-accordion__item-content">
+								{{data.purpose && data.purpose[0]?.job_purpose}}
+							</div>
+						</div>
+					</div>
+					<!--end::Item:purpose-->
+					<!--begin::Item:qualification-->
+					<div class="m-accordion__item">
+						<div class="m-accordion__item-head collapsed" role="tab" id="m_accordion_1_item_3_head" data-toggle="collapse" href="#m_accordion_1_item_3_body"
+						 aria-expanded="    false">
+							<span class="m-accordion__item-mode"></span>
+							<span class="m-accordion__item-title m-accordian__item-mode-title">
+								{{tab4Title}}
+							</span>
+							<span class="m-accordion__item-icon">
+								<i class="fa flaticon-user-ok"></i>
+							</span>
+						</div>
+						<div class="m-accordion__item-body collapse" id="m_accordion_1_item_3_body" role="tabpanel" aria-labelledby="m_accordion_1_item_3_head">
+							<div class="m-accordion__item-content">
+								<!--begin:job qualification table-->
+								<div class="m-portlet__body">
+									<!--begin:repeater form qualification-->
+									<table class="table m-table">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Area</th>
+												<th>Sub-Area</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr *ngFor="let q of data.qualification;let qc = index">
+												<td>{{qc+1}}</td>
+												<td>{{q.AREA}} </td>
+												<td>{{q.SUB_AREA}}</td>
+											</tr>
+										</tbody>
+									</table>
+									<!--end:repeater form qualification-->
+								</div>
+								<!--end:job qualification table-->
+							</div>
+						</div>
+					</div>
+					<!--end::Item:qualification-->
+					<!--begin::Item:competencies-->
+					<div class="m-accordion__item">
+						<div class="m-accordion__item-head collapsed" role="tab" id="m_accordion_1_item_4_head" data-toggle="collapse" href="#m_accordion_1_item_4_body"
+						 aria-expanded="    false">
+							<span class="m-accordion__item-mode"></span>
+							<span class="m-accordion__item-title m-accordian__item-mode-title">
+								{{tab5Title}}
+							</span>
+							<span class="m-accordion__item-icon">
+								<i class="fa flaticon-puzzle"></i>
+							</span>
+						</div>
+						<div class="m-accordion__item-body collapse" id="m_accordion_1_item_4_body" role="tabpanel" aria-labelledby="m_accordion_1_item_4_head">
+							<div class="m-accordion__item-content">
+								<!--start:competencies table-->
+								<div class="m-portlet__body">
+									<div class="form-group m-form__group row">
+										<div class="table-responsive">
+											<table class="table m-table">
+												<thead>
+													<tr>
+														<th>No</th>
+														<th>Cluster</th>
+														<th>Category</th>
+														<th>Competency</th>
+														<th>Definition</th>
+														<th>Level</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr *ngFor="let t of data.technical;let tc = index">
+														<td>{{tc+1}}</td>
+														<td>{{t.CLUSTER_ID}} </td>
+														<td>{{t.CATEGORY}}
+															<!-- {{findTecComCat(t.CATEGORY)}} -->
+														</td>
+														<td>{{t.COMP_NAME}}</td>
+														<td>{{t.COMP_DEF}}</td>
+														<td>{{t.LEVEL}}</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+								<!--end:competencies table-->
+								<!--    End Job Tech Com Modal -->
+							</div>
+						</div>
+					</div>
+					<!--end::Item:competencies-->
+					<!--begin::Item:aor-->
+					<div class="m-accordion__item">
+						<div class="m-accordion__item-head collapsed" role="tab" id="m_accordion_1_item_5_head" data-toggle="collapse" href="#m_accordion_1_item_5_body"
+						 aria-expanded="    false">
+							<span class="m-accordion__item-mode"></span>
+							<span class="m-accordion__item-title m-accordian__item-mode-title">
+								{{tab6Title}}
+							</span>
+							<span class="m-accordion__item-icon">
+								<i class="fa flaticon-network"></i>
+							</span>
+						</div>
+						<div class="m-accordion__item-body collapse" id="m_accordion_1_item_5_body" role="tabpanel" aria-labelledby="m_accordion_1_item_5_head">
+							<div class="m-accordion__item-content">
+								<!--start:aor table-->
+								<div class="m-portlet__body">
+									<div class="form-group m-form__group row">
+										<div class="table-responsive">
+											<table class="table m-table">
+												<thead>
+													<tr>
+														<th>No</th>
+														<th>RESPONSIBILITY</th>
+														<th>KEY ACTIVITIES</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr *ngFor="let a of data.aor;let ac = index">
+														<td>{{ac+1}}</td>
+														<td>{{a.AOR}} </td>
+														<td>{{a.KEY_ACT}}</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+								<!--end:aor table-->
+							</div>
+						</div>
+					</div>
+					<!--end::Item:aor-->
+					<!--begin::Item:experiences-->
+					<div class="m-accordion__item">
+						<div class="m-accordion__item-head collapsed" role="tab" id="m_accordion_1_item_6_head" data-toggle="collapse" href="#m_accordion_1_item_6_body"
+						 aria-expanded="    false">
+							<span class="m-accordion__item-mode"></span>
+							<span class="m-accordion__item-title m-accordian__item-mode-title">
+								{{tab7Title}}
+							</span>
+							<span class="m-accordion__item-icon">
+								<i class="fa flaticon-profile-1"></i>
+							</span>
+						</div>
+						<div class="m-accordion__item-body collapse" id="m_accordion_1_item_6_body" role="tabpanel" aria-labelledby="m_accordion_1_item_6_head">
+							<div class="m-accordion__item-content">
+								<!--start:experiences table-->
+								<div class="m-portlet__body">
+									<div class="form-group m-form__group row">
+										<div class="table-responsive">
+											<table class="table m-table">
+												<thead>
+													<tr>
+														<th>No</th>
+														<th>AREA</th>
+														<th>YEARS</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr *ngFor="let r of data.requirements;let rc = index">
+														<td>{{rc+1}}</td>
+														<td>{{r.AREA}} </td>
+														<td>{{r.YEARS}}</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+								<!--end:experiences table-->
+							</div>
+						</div>
+					</div>
+					<!--end::Item:experiences-->
+				</div>
+				<!--end::Section-->
+			</div>
+			<!--end::Portlet-->
+		</div>
+	</div>
+
+</div>
+
+<!--begin::advertise modal 
+<div class="modal fade" id="m_modal_advert" tabindex="-1" role="dialog" aria-labelledby="advertiseModalCenterTitle" aria-hidden="true"
+ style="display: none;">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<form [formGroup]="advPosForm" (ngSubmit)="onadvPosFormSubmit()">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">
+						Advertise Position #{{posId2}}
+					</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">
+							×
+						</span>
+					</button>
+				</div>
+
+				<div class="modal-body">
+					<div class="alert m-alert m-alert--default " role="alert">
+						<strong>To complete the advertisement, kindly select the advertisement period start and end date. In addition, please add any
+							remarks for the advertisement.</strong>
+					</div>
+
+					<div class="m-form__section m-form__section--first">
+						<div class="form-group m-form__group row">
+							<label for="example-text-input" class="col-2 col-form-label">Remarks</label>
+							<div class="col-10">
+								<textarea formControlName="advPosRemark" id="advertise_remarks" class="form-control m-input m-input--air m-input--pill" required
+								 rows="8"></textarea>
+							</div>
+							<input type="hidden" formControlName="advPosIdx2" required value="{{data.profile && data.profile[0].position_id}}">
+						</div>
+					</div>
+					<div class="m-form__seperator m-form__seperator--dashed"></div>
+					<div class="m-form__section m-form__section--last">
+						<div class="form-group m-form__group row">
+							<label for="example-text-input" class="col-2 col-form-label">Advertisement Period*</label>
+							<div class="col-8">
+								<div class="input-daterange input-group" id="advertise_daterangepicker">
+
+									<input type="text" class="form-control m-input m-input--air m-input--pill" formControlName="advPosStartDt" name="start" />
+									<div class="input-group-append">
+										<span class="input-group-text">
+											<i class="la la-ellipsis-h"></i>
+										</span>
+									</div>
+									<input type="text" class="form-control" formControlName="advPosEndDt" name="end" />
+
+									<input type="hidden" formControlName="advPosStartDt2" name="start2" id="advPosStartDt2" />
+									<input type="hidden" formControlName="advPosEndDt2" name="end2" id="advPosEndDt2" />
+									<p class="error_message" style="color:red" *ngIf="(advPosForm.get('advPosStartDt2').hasError('required') && (advPosForm.get('advPosStartDt2').dirty)||advPosForm.get('advPosEndDt2').hasError('required') && (advPosForm.get('advPosEndDt2').dirty))">Please define advertisement period.</p>
+
+								</div>
+								<span class="m-form__help">
+									Please select start date and end date (end time must be within 60 days)
+								</span>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">
+						Close
+					</button>
+					<button type="submit" class="btn btn-primary" onclick="$('.modal').modal('hide')">
+						Confirm
+					</button>
+				</div>
+			</div>
+
+		</form>
+	</div>
+</div>
+ end::advertise modal-->
+
+<style>
+	.m-accordian__item-mode-title {
+		padding-left: 1.5rem;
+	}
+
+	.m-button-advert {
+		float: right;
+		padding-bottom: 1rem;
+	}
+
+	.m-repeater-edit-delete {
+		margin-top: 1.8rem;
+	}
+
+	.m-repeater-edit-delete .btn {
+		width: 6.2rem;
+	}
+
+	.m-dropzone {
+		min-height: 160px;
+		border-radius: 18px;
+		box-shadow: 0 3px 20px 0 rgba(113, 106, 202, .11);
+	}
+
+	.dropzone .dz-preview {
+		margin: 0;
+	}
+
+	.dropzone .dz-preview.dz-file-preview .dz-image,
+	.m-dropzone .dz-preview .dz-image {
+		border-radius: 0;
+	}
+
+	[hidden] {
+		display: none !important;
+	}
+</style>
+
+<!-- start model to apply job -->
+<div class="modal fade" id="modal_to_apply" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered " role="document">
+		<form [formGroup]="applyPosForm" (ngSubmit)="onapplyPosFormSubmit()">
+			<div class="modal-content m-alert m-alert--icon alert alert-warning">
+				<div class="modal-body">
+					<p>Are you sure to apply for {{data.profile && data.profile[0]?.position}}?</p>
+					<!-- <p>Remarks</p>
+					<div class="col-lg-12">
+						<textarea formControlName="advPosRemark" class="form-control m-input" rows="3"></textarea>
+					</div> -->
+					<input type="hidden" formControlName="advPosIdx2" required value="{{advPosIdx2}}">
+					<input type="hidden" formControlName="advPosName" required value="{{advPosName}}">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-outline-light btn-sm m-btn m-btn--hover-brand" data-dismiss="modal">
+						No
+					</button>
+					<button type="submit" class="btn btn-outline-light btn-sm m-btn m-btn--hover-brand" onclick="$('.modal').modal('hide')">
+						Yes
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<!-- end model to apply job -->

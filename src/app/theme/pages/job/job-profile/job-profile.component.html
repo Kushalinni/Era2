@@ -1,0 +1,143 @@
+<div class="m-subheader">
+    <div class="d-flex align-items-center">
+        <div class="mr-auto">
+            <h3 class="m-subheader__title m-subheader__title--separator">
+                {{title1}}
+            </h3>
+            <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+                <li class="m-nav__item m-nav__item--home">
+                    <a href="#" class="m-nav__link m-nav__link--icon">
+                        <i class="m-nav__link-icon la la-home"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- END: Subheader -->
+<div class="m-content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="m-portlet m-portlet--rounded">
+                <div class="m-portlet__head m--bg-focus">
+                    <div class="m-portlet__head-caption">
+                        <div class="m-portlet__head-title">
+                            <h3 class="m-portlet__head-text  m--font-inverse-primary">
+                                    {{title2}}
+                                <small>
+                                    <!--portlet sub title-->
+                                </small>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-portlet__body">
+                    <div class="m-section">
+                        <div class="row">
+                            <div class="col-12 col-md-8">
+                                    <ng-template #alertError></ng-template>
+                                <!-- <input type="text"  (keyup)="onNameKeyUp($event)">-->
+                                <input class="form-control form-control-md" type="text" (keyup)="onNameKeyUp($event)" placeholder="Position Id/Staff Id/Name/Employee No">
+                            </div>
+                            <div class="col-6 col-md-4 m-login__form-action">
+<!-- <button (click)="getProfileData()" class="btn btn-focus "> -->
+                            <button [disabled]="loading" (click)="getProfileData()" [ngClass]="{'m-loader m-loader--right m-loader--light': loading}" id="m_login_signin_submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air m-login__btn m-login__btn--primary">
+                                Search
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top:5px" *ngIf="displayTbl">
+                        <div class="m-alert m-alert--icon alert alert-{{searchResultStyle}}" role="alert">
+                                <div class="m-alert__icon">
+                                    <i class="la {{searchResultIcon}}"></i>
+                                </div>
+                                <div class="m-alert__text">
+                                    {{searchResult}}
+                                </div>
+                                <div class="m-alert__close">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            </div>
+                            </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-striped" *ngIf="displayTbl">
+                                <thead class="thead-inverse"> 
+                                    <tr>
+                                        <!-- <th>#</th> -->
+                                        <th>Position Id</th>
+                                        <th>Staff Id</th>
+                                        <th>Name</th>
+                                        <th>Position Name</th>
+                                        <th>Status</th>
+                                        <th></th>
+                                    </tr>
+                                    <tr>
+                                        <!-- <th></th> -->
+                                        <th>
+                                            <input class="form-control form-control-sm" name="termPosId" [(ngModel)]="termPosId">
+                                        </th>
+                                        <th>
+                                                <input class="form-control form-control-sm" name="termStaffId" [(ngModel)]="termStaffId">
+                                            </th>
+                                        <th>
+                                            <input class="form-control form-control-sm" name="termName" [(ngModel)]="termName">
+                                        </th>
+                                        <th>
+                                            <input class="form-control form-control-sm" name="termPos" [(ngModel)]="termPos">
+                                        </th>
+                                        <th>
+                                            <input class="form-control form-control-sm" name="termStt" [(ngModel)]="termStt">
+                                        </th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of data.results | filter : termPosId : termStaffId : termName : termPos :termStt ;let i = index"> <!-- style="cursor:pointer" (click)="getJobAdvDetails(item.positionId)"  -->
+                                        <!-- <td>{{i+1}}</td> -->
+                                        <td>{{item.positionId}}</td>
+                                        <td>{{item.staffNo}}</td>
+                                        <td>{{item.name | uppercase }}</td>
+                                        <td>{{item.positionName | uppercase }} </td>
+                                        <td><span class="m-badge m-badge--{{getStatusColor(item.status)}} m-badge--wide"> 
+                                                    {{item.status | uppercase }} </span> 
+                                        </td>
+                                        <!-- <td>
+                                            <div class="btn-group">
+                                                <a href="javascript:;" [routerLink]="['../detail',item.positionId]" class="btn btn-xs">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </a>
+                                            </div>
+                                        </td> -->
+                                        <td>                                        
+                                            <div class="btn-group">
+                                                    <a href="javascript:;" [routerLink]="['../detail',item.positionId]" class="btn btn-xs" title="View Job Info">
+                                                        <i class="flaticon-information"></i>
+                                                    </a>
+                                                </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!--<div class="row">
+                                    <div class="col-12">
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination justify-content-end">
+                                                  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                            </ul>
+                                        </nav>   
+                                   </div>     
+                                </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

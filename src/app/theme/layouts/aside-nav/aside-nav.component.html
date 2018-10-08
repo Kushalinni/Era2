@@ -1,0 +1,176 @@
+<!-- BEGIN: Left Aside -->
+<button class="m-aside-left-close  m-aside-left-close--skin-dark" id="m_aside_left_close_btn" appunwraptag="">
+    <i class="la la-close"></i>
+</button>
+<div id="m_aside_left" class="m-grid__item	m-aside-left  m-aside-left--skin-dark ghcm-left-panel" >
+    <!-- BEGIN: Aside Menu -->
+    <div id="m_ver_menu" class="m-aside-menu  m-aside-menu--skin-dark m-aside-menu--submenu-skin-dark" m-menu-vertical="1" m-menu-scrollable="0"
+        m-menu-dropdown-timeout="500">
+        <ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow">
+            <li class="m-menu__item  " routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }" aria-haspopup="true">
+                <a routerLink="/index" class="m-menu__link">
+                    <i class="m-menu__link-icon flaticon-line-graph"></i>
+                    <span class="m-menu__link-title">
+                        <span class="m-menu__link-wrap">
+                            <span class="m-menu__link-text">
+                                Dashboard
+                            </span>
+                            <!--<span class="m-menu__link-badge">
+                                <span class="m-badge m-badge--danger">
+                                    2
+                                </span>
+                            </span>-->
+                        </span>
+                    </span>
+                </a>
+            </li>
+
+            <li class="m-menu__section" *ngIf="jobBuilderShow">
+                <h4 class="m-menu__section-text">
+                    {{jobBuilder}}
+                </h4>
+            </li>
+            <li class="m-menu__item" *ngIf="jobProfileShow" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"
+                aria-haspopup="true">
+                <a routerLink="/job/profile" class="m-menu__link">
+                    <i class="m-menu__link-icon flaticon-menu"></i>
+                    <span class="m-menu__link-text ghcmtest">
+                        {{jobProfile}}
+                    </span>
+                </a>
+            </li>
+
+            <li class="m-menu__item" *ngIf="adsApprovalShow" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"
+                aria-haspopup="true">
+                <a routerLink="/job/pending-approval" class="m-menu__link">
+                    <i class="m-menu__link-icon flaticon-menu"></i>
+                    <span class="m-menu__link-text">
+                        {{adsApproval}}
+                    </span>
+                    <!-- <span class="m-menu__link-badge">
+                            <span class="m-badge m-badge--danger">
+                                {{ttlAppReq}}
+                            </span>
+                        </span> -->
+                </a>
+            </li>
+
+            <li class="m-menu__item" *ngIf="adsTrackerShow" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"
+                aria-haspopup="true">
+                <a routerLink="/job/advertisement-tracking/all" class="m-menu__link">
+                    <i class="m-menu__link-icon flaticon-menu"></i>
+                    <span class="m-menu__link-text">
+                        {{adsTracker}}
+                    </span>
+                </a>
+            </li>
+            <!--
+            <li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }" aria-haspopup="true">
+                <a routerLink="/job/vacant" class="m-menu__link">
+                    <i class="m-menu__link-icon flaticon-menu"></i>
+                    <span class="m-menu__link-text">
+                        Vacant Position
+                    </span>
+                    <span class="m-menu__link-badge">
+                        <span class="m-badge m-badge--danger">
+                            {{ttlVacant}}
+                        </span>
+                    </span>
+                </a>
+            </li>-->
+
+            <!--<li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }" aria-haspopup="true">
+                <a routerLink="/job/advertisement-tracking/all" class="m-menu__link">
+                    <i class="m-menu__link-icon flaticon-menu"></i>
+                    <span class="m-menu__link-text">
+                        Advertisement Tracking
+                    </span>
+                     <span class="m-menu__link-badge">
+                        <span class="m-badge m-badge--danger">
+                            {{ttlAppReq}}
+                        </span>
+                    </span>
+                </a>
+            </li>-->
+
+            <!-- <li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }" aria-haspopup="true">
+                <a routerLink="/job/pending-approval" class="m-menu__link">
+                    <i class="m-menu__link-icon flaticon-menu"></i>
+                    <span class="m-menu__link-text">
+                        Pending Approval
+                    </span>
+                   <span class="m-menu__link-badge">
+                        <span class="m-badge m-badge--danger">
+                            {{ttlAppReq}}
+                        </span>
+                    </span>
+                </a>
+            </li>-->
+
+            <li class="m-menu__section" *ngIf="jobAdvShow">
+                <h4 class="m-menu__section-text">
+                    {{jobAdv}}
+                </h4>
+            </li>
+            <li class="m-menu__item" *ngIf="vacListShow" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"
+                aria-haspopup="true">
+                <a routerLink="/job/advertisement/list" class="m-menu__link">
+                    <i class="m-menu__link-icon flaticon-menu"></i>
+                    <span class="m-menu__link-text">
+                        {{vacList}}
+                    </span>
+                    <!-- <span class="m-menu__link-badge">
+                        <span class="m-badge m-badge--danger">
+                            {{ttlAppReq}}
+                        </span>
+                    </span> -->
+                </a>
+            </li>
+            <!-- <li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }" aria-haspopup="true">
+                <a routerLink="/job/advertisement/list" class="m-menu__link">
+                    <i class="m-menu__link-icon flaticon-menu"></i>
+                    <span class="m-menu__link-text">
+                        My Application
+                    </span>
+                    <span class="m-menu__link-badge">
+                        <span class="m-badge m-badge--danger">
+                            {{ttlAppReq}}
+                        </span>
+                    </span>
+                </a>
+            </li>-->
+
+            <!--
+            <li class="m-menu__section">
+                <h4 class="m-menu__section-text">
+                    User Management
+                </h4>
+            </li>
+            <li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }" aria-haspopup="true">
+                <a routerLink="/user/list" class="m-menu__link">
+                    <i class="m-menu__link-icon flaticon-menu"></i>
+                    <span class="m-menu__link-text">
+                        User
+                    </span>
+                </a>
+            </li>-->
+
+            <!--
+            <li class="m-menu__section">
+                <h4 class="m-menu__section-text">
+                    Setup
+                </h4>
+            </li>
+            <li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }" aria-haspopup="true">
+                <a routerLink="/profile" class="m-menu__link">
+                    <i class="m-menu__link-icon flaticon-user"></i>
+                    <span class="m-menu__link-text">
+                        User Profile
+                    </span>
+                </a>
+            </li>-->
+        </ul>
+    </div>
+    <!-- END: Aside Menu -->
+</div>
+<!-- END: Left Aside -->

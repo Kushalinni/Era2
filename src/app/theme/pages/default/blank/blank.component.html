@@ -1,0 +1,206 @@
+<div class="m-subheader">
+    <div class="d-flex align-items-center">
+        <div class="mr-auto">
+            <h3 class="m-subheader__title m-subheader__title--separator">
+                Dashboard
+            </h3>
+            <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+                <li class="m-nav__item m-nav__item--home">
+                    <a href="#" class="m-nav__link m-nav__link--icon">
+                        <i class="m-nav__link-icon la la-home"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- END: Subheader -->
+<div class="m-content">
+        <div class="row">
+                <div class="col-lg-12">
+                    <div class="m-portlet m-portlet--rounded">
+                            <div class="m-portlet__head">
+                                    <div class="m-portlet__head-caption">
+                                        <div class="m-portlet__head-title">
+                                            <h3 class="m-portlet__head-text">
+                                                My Action
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+
+                        <div class="m-portlet__body">
+                            <div class="row mb-3">
+                                <!-- -->
+                                <div class="col-xl-3 col-sm-6 py-2" *ngFor="let q of byRoleKey;let qr = index">
+                                    <div class="card text-white bg-{{byRoleColor[qr]}} h-100">
+                                        <div class="card-body bg-{{byRoleColor[qr]}}">
+                                            <div class="rotate">
+                                                <i class="fa fa-list fa-4x"></i>
+                                            </div>
+                                            <h6 class="text-uppercase">
+                                                <p>{{byRoleKey[qr] | titlecase }}</p>
+                                            </h6>
+                                            <h1 class="display-4">{{byRoleVal[qr]}}</h1>
+                                        </div>
+                                    </div>
+                                    <!-- <p><a class="divLink" href="{{byRoleUrl[qr]}}">{{byRoleKey[qr] | titlecase }} URL</a></p> -->
+                                    <p>
+                                        <a class="divLink" href="#" (click)="redirect(byRoleUrl[qr])">{{byRoleKey[qr] | titlecase }} URL</a>
+                                    </p>
+                                </div>
+                                <!-- -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="m-portlet m-portlet--rounded" style="height: 500px;">
+                <div class="m-portlet__head">
+                    <div class="m-portlet__head-caption">
+                        <div class="m-portlet__head-title">
+                            <h3 class="m-portlet__head-text">
+                                Summary for {{today | date:'MMMM y'}}
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-portlet__body">
+                    <!-- <p-chart type="pie" [data]="chartData"></p-chart> -->
+
+                    <table class="table table-hover">
+                        <tr *ngFor="let q of myKey;let qc = index">
+                            <td>{{myKey[qc] | titlecase }}</td>
+                            <td>{{myVal[qc]}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="m-portlet m-portlet--rounded m-scrollable" data-scrollbar-shown="true" data-scrollable="true" data-max-height="500">
+
+                <div class="m-portlet__body">
+
+                    <!--begin::Portlet-->
+                    <div class="m-portlet m-portlet--creative m-portlet--bordered-semi">
+                        <div class="m-portlet__head">
+                            <div class="m-portlet__head-caption">
+                                <div class="m-portlet__head-title">
+                                    <span class="m-portlet__head-icon">
+                                        <i class="flaticon-interface-6"></i>
+                                    </span>
+                                    <h3 class="m-portlet__head-text">
+                                        Launching of GHCM Project
+                                    </h3>
+                                    <h2 class="m-portlet__head-label m-portlet__head-label--accent">
+                                        <span>
+                                            12 Aug 2018
+                                        </span>
+                                    </h2>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="m-portlet__body">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                            text ever since the 1500s, when an unknown printer took a galley of type and scrambled. 
+                        </div>
+                    </div>
+                    <!--end::Portlet-->
+                    <!--begin::Portlet-->
+                    <div class="m-portlet m-portlet--creative m-portlet--bordered-semi">
+                        <div class="m-portlet__head">
+                            <div class="m-portlet__head-caption">
+                                <div class="m-portlet__head-title">
+                                    <span class="m-portlet__head-icon">
+                                        <i class="flaticon-interface-6"></i>
+                                    </span>
+                                    <h3 class="m-portlet__head-text">
+                                            Lorem Ipsum
+                                    </h3>
+                                    <h2 class="m-portlet__head-label m-portlet__head-label--accent">
+                                        <span>
+                                            08 Mar 2018
+                                        </span>
+                                    </h2>
+                                </div>
+                            </div>                            
+                        </div>
+                        <div class="m-portlet__body">
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                            type and scrambled.
+                        </div>
+                    </div>
+                    <!--end::Portlet-->
+                    <!--begin::Portlet-->
+                    <div class="m-portlet m-portlet--creative m-portlet--bordered-semi">
+                            <div class="m-portlet__head">
+                                <div class="m-portlet__head-caption">
+                                    <div class="m-portlet__head-title">
+                                        <span class="m-portlet__head-icon">
+                                            <i class="flaticon-interface-6"></i>
+                                        </span>
+                                        <h3 class="m-portlet__head-text">
+                                                Lorem Ipsum
+                                        </h3>
+                                        <h2 class="m-portlet__head-label m-portlet__head-label--accent">
+                                            <span>
+                                                17 Jul 2018
+                                            </span>
+                                        </h2>
+                                    </div>
+                                </div>                            
+                            </div>
+                            <div class="m-portlet__body">
+                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                                type and scrambled.
+                            </div>
+                        </div>
+                        <!--end::Portlet-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<style type="text/css">
+    div.box {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background: #eee;
+        color: #000;
+        padding: 20px;
+    }
+
+    div.box:hover {
+        cursor: hand;
+        cursor: pointer;
+        opacity: .9;
+    }
+
+    a.divLink {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        text-decoration: none;
+        /* Makes sure the link doesn't get underlined */
+        z-index: 10;
+        /* raises anchor tag above everything else in div */
+        background-color: white;
+        /*workaround to make clickable in IE */
+        opacity: 0;
+        /*workaround to make clickable in IE */
+        filter: alpha(opacity=0);
+        /*workaround to make clickable in IE */
+    }
+</style>

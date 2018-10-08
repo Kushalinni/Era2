@@ -1,0 +1,124 @@
+<div class="m-subheader">
+    <div class="d-flex align-items-center">
+        <div class="mr-auto">
+            <h3 class="m-subheader__title m-subheader__title--separator">
+                {{title1}}
+            </h3>
+            <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+                <li class="m-nav__item m-nav__item--home">
+                    <a href="#" class="m-nav__link m-nav__link--icon">
+                        <i class="m-nav__link-icon la la-home"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- END: Subheader -->
+<div class="m-content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="m-portlet m-portlet--rounded">
+                <div class="m-portlet__head m--bg-focus">
+                    <div class="m-portlet__head-caption">
+                        <div class="m-portlet__head-title">
+                            <h3 class="m-portlet__head-text  m--font-inverse-primary">
+                                {{title2}}
+                                <small>
+                                    <!--portlet sub title-->
+                                </small>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-portlet__body">
+                    <div class="m-section">
+                        <div class="row">
+                            <div class="col-12 col-md-8">
+                                <input class="form-control form-control-md" type="text" (keyup)="onNameKeyUp($event)" placeholder="{{searchPlaceholder}}">
+                            </div>
+                            <div class="col-6 col-md-4 m-login__form-action">
+                                <button (click)="getProfileData()" class="btn btn-focus ">Search</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+
+                            <table class="table table-striped">
+                                <thead class="thead-inverse">
+                                    <tr>
+                                        <th colspan="5">Total: {{totalRes}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Staff Id</th>
+                                        <th>Name</th>
+                                        <th>Position</th>
+                                        <th>LOB</th>
+                                        <th></th>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <th>
+                                            <input class="form-control form-control-sm" name="termStaffId" [(ngModel)]="termStaffId">
+                                        </th>
+                                        <th>
+                                            <input class="form-control form-control-sm" name="termName" [(ngModel)]="termName">
+                                        </th>
+                                        <th>
+                                            <input class="form-control form-control-sm" name="termPos" [(ngModel)]="termPos">
+                                        </th>
+                                        <th>
+                                            <input class="form-control form-control-sm" name="termStt" [(ngModel)]="termStt">
+                                        </th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of data.results | filter : termStaffId : termName : termPos :termStt ;let i = index">
+                                        <td>{{i+1}}</td>
+                                        <td>{{item.staffNo}}</td>
+                                        <td>{{item.name | uppercase }}</td>
+                                        <td>{{item.positionName | uppercase }} </td>
+                                        <td>{{item.status | uppercase }} </td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a href="javascript:;" [routerLink]="['../detail',item.positionId]" class="btn btn-xs">
+                                                    <!-- Details -->
+                                                    <i class="fa fa-info-circle"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-end">
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">Previous</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">1</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">2</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">3</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

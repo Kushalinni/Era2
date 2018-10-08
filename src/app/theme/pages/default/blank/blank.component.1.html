@@ -1,0 +1,113 @@
+<div class="m-subheader">
+    <div class="d-flex align-items-center">
+        <div class="mr-auto">
+            <h3 class="m-subheader__title m-subheader__title--separator">
+                Dashboard
+            </h3>
+            <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+                <li class="m-nav__item m-nav__item--home">
+                    <a href="#" class="m-nav__link m-nav__link--icon">
+                        <i class="m-nav__link-icon la la-home"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- END: Subheader -->
+<div class="m-content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="m-portlet m-portlet--rounded">                
+                <div class="m-portlet__body">
+                        
+                    <div class="row mb-3">
+                        <div class="col-xl-3 col-sm-6 py-2">
+                            <div class="card text-white bg-danger h-100">
+                                <div class="card-body bg-danger">
+                                    <div class="rotate">
+                                        <i class="fa fa-list fa-4x"></i>
+                                    </div>
+                                    <h6 class="text-uppercase">Vacant Position</h6>
+                                    <h1 class="display-4">25</h1>
+                                </div>
+                                
+                            </div><p><a class="divLink" href="/job/vacant">Job Vacant URL</a></p>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 py-2">
+                            <div class="card bg-success text-white h-100">
+                                <div class="card-body bg-success">
+                                    <div class="rotate">
+                                        <i class="fa fa-user fa-4x"></i>
+                                    </div>
+                                    <h6 class="text-uppercase">New Staff</h6>
+                                    <h1 class="display-4">5</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 py-2">
+                            <div class="card text-white bg-info h-100">
+                                <div class="card-body bg-info">
+                                    <div class="rotate">
+                                        <i class="fa fa-twitter fa-4x"></i>
+                                    </div>
+                                    <h6 class="text-uppercase">interns &amp; slims </h6>
+                                    <h1 class="display-4">10</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 py-2">
+                            <div class="card text-white bg-warning h-100">
+                                <div class="card-body">
+                                    <div class="rotate">
+                                        <i class="fa fa-share fa-4x"></i>
+                                    </div>
+                                    <h6 class="text-uppercase">Pending approval </h6>
+                                    <h1 class="display-4">36</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style type="text/css">
+    div.box {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background: #eee;
+        color: #000;
+        padding: 20px;    
+    }
+    
+    div.box:hover {
+        cursor: hand;
+        cursor: pointer;
+        opacity: .9;
+    }
+    
+    a.divLink {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        text-decoration: none;
+        /* Makes sure the link doesn't get underlined */
+        z-index: 10;
+        /* raises anchor tag above everything else in div */
+        background-color: white;
+        /*workaround to make clickable in IE */
+        opacity: 0;
+        /*workaround to make clickable in IE */
+        filter: alpha(opacity=0);
+        /*workaround to make clickable in IE */
+    }
+</style>

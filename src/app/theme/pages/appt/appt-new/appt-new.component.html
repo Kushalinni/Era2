@@ -1,0 +1,735 @@
+<div class="m-subheader">
+    <div class="d-flex align-items-center">
+        <div class="mr-auto">
+            <h3 class="m-subheader__title m-subheader__title--separator">
+                Appointment
+            </h3>
+            <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+                <li class="m-nav__item m-nav__item--home">
+                    <a href="#" class="m-nav__link m-nav__link--icon">
+                        <i class="m-nav__link-icon la la-home"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- END: Subheader -->
+<div class="m-content">
+    <!--Begin::Main Portlet-->
+    <div class="m-portlet m-portlet--full-height">
+        <!--begin: Portlet Head-->
+        <div class="m-portlet__head m--bg-focus">
+            <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                    <h3 class="m-portlet__head-text  m--font-inverse-primary">
+                        New Appointment
+                        <small>
+                            <!--portlet sub title-->
+                        </small>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <!--end: Portlet Head-->
+        <!--begin: Form Wizard-->
+        <div class="m-wizard m-wizard--2 m-wizard--success" id="m_wizard">
+            <!--begin: Message container -->
+            <div class="m-portlet__padding-x">
+                <!-- Here you can put a message or alert -->
+            </div>
+            <!--end: Message container -->
+            <!--begin: Form Wizard Head -->
+            <div class="m-wizard__head m-portlet__padding-x">
+                <!--begin: Form Wizard Progress -->
+                <div class="m-wizard__progress">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <!--end: Form Wizard Progress -->
+                <!--begin: Form Wizard Nav -->
+                <div class="m-wizard__nav">
+                    <div class="m-wizard__steps">
+                        <div class="m-wizard__step m-wizard__step--current" m-wizard-target="m_wizard_form_step_1">
+                            <a href="#" class="m-wizard__step-number">
+                                <span>
+                                    <i class="fa  flaticon-placeholder"></i>
+                                </span>
+                            </a>
+                            <div class="m-wizard__step-info">
+                                <div class="m-wizard__step-title">
+                                    1. Location &amp; Date Time
+                                </div>
+                                <div class="m-wizard__step-desc">
+                                    Pick location &amp; date time
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m-wizard__step" m-wizard-target="m_wizard_form_step_2">
+                            <a href="#" class="m-wizard__step-number">
+                                <span>
+                                    <i class="fa  flaticon-layers"></i>
+                                </span>
+                            </a>
+                            <div class="m-wizard__step-info">
+                                <div class="m-wizard__step-title">
+                                    2. Customer Detail
+                                </div>
+                                <div class="m-wizard__step-desc">
+                                    Fill in your details
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m-wizard__step" m-wizard-target="m_wizard_form_step_3">
+                            <a href="#" class="m-wizard__step-number">
+                                <span>
+                                    <i class="fa  flaticon-layers"></i>
+                                </span>
+                            </a>
+                            <div class="m-wizard__step-info">
+                                <div class="m-wizard__step-title">
+                                    3. Account Setup
+                                </div>
+                                <div class="m-wizard__step-desc">
+                                    Login / Setup new account
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="m-wizard__step" m-wizard-target="m_wizard_form_step_4">
+                            <a href="#" class="m-wizard__step-number">
+                                <span>
+                                    <i class="fa  flaticon-layers"></i>
+                                </span>
+                            </a>
+                            <div class="m-wizard__step-info">
+                                <div class="m-wizard__step-title">
+                                    4. Policy
+                                </div>
+                                <div class="m-wizard__step-desc">
+                                    Read our policy
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="m-wizard__step" m-wizard-target="m_wizard_form_step_5">
+                            <a href="#" class="m-wizard__step-number">
+                                <span>
+                                    <i class="fa  flaticon-layers"></i>
+                                </span>
+                            </a>
+                            <div class="m-wizard__step-info">
+                                <div class="m-wizard__step-title">
+                                    5. Summary &amp; Confirmation
+                                </div>
+                                <div class="m-wizard__step-desc">
+                                    Confirm &amp; make appointment
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end: Form Wizard Nav -->
+            </div>
+            <!--end: Form Wizard Head -->
+            <!--begin: Form Wizard Form-->
+            <div class="m-wizard__form">
+                <!--                 1) Use m-form--label-align-left class to alight the form input lables to the right                 2) Use m-form--state class to highlight input control borders on form validation                 -->
+                <form class="m-form m-form--label-align-left- m-form--state-" id="m_form">
+                    <!--begin: Form Body -->
+                    <div class="m-portlet__body">
+                        <div class="m-separator m-separator--dashed m-separator--lg"></div>
+
+                        <!--begin: Form Wizard Step 1-->
+                        <div class="m-wizard__form-step m-wizard__form-step--current" id="m_wizard_form_step_1">
+                            <div class="row">
+                                <div class="col-xl-8 offset-xl-2">
+                                    <div class="m-form__section m-form__section--first">
+                                        <div class="m-form__heading">
+                                            <h3 class="m-form__heading-title">
+                                                Service Location
+                                            </h3>
+                                        </div>
+                                        <div class="form-group m-form__group row">
+                                            <label class="col-xl-3 col-lg-3 col-form-label">
+                                                * Location:
+                                            </label>
+                                            <div class="col-xl-9 col-lg-9">
+                                                <select name="country" class="form-control m-input">
+                                                    <optgroup label="Penang">
+                                                        <option value="1">Penang 1</option>
+                                                        <option value="2">Penang 2</option>
+                                                        <option value="3">Penang 3</option>
+                                                    </optgroup>
+                                                    <optgroup label="Kuala Lumpur">
+                                                        <option value="1">KL 1</option>
+                                                        <option value="2">KL 2</option>
+                                                        <option value="3">KL 3</option>
+                                                    </optgroup>
+                                                    <optgroup label="Petaling Jaya">
+                                                        <option value="1">Kelana Jaya</option>
+                                                    </optgroup>
+                                                </select>
+                                                <!--<input type="text" name="name" class="form-control m-input" placeholder="" value="Nick Stone">
+                                                <span class="m-form__help">
+                                                    Please enter your first and last names
+                                                </span>-->
+                                            </div>
+                                        </div>
+                                        <div class="form-group m-form__group row">
+                                            <label class="col-xl-3 col-lg-3 col-form-label">
+                                                * Package:
+                                            </label>
+                                            <div class="col-xl-9 col-lg-9">
+                                                <select name="country" class="form-control m-input">
+                                                    <option value="2D">2D Detail Scan</option>
+                                                    <option value="3D">3D Scan</option>
+                                                    <option value="5D">5D Scan</option>
+                                                    <option value="6D">6D Scan</option>
+                                                </select>
+                                                <!--<div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">
+                                                            <i class="la la-phone"></i>
+                                                        </span>
+                                                    </div>
+                                                    <input type="text" name="phone" class="form-control m-input" placeholder="" value="1-541-754-3010">
+                                                </div>
+                                                <span class="m-form__help">
+                                                    Enter your valid phone in US phone format. E.g: 1-541-754-3010
+                                                </span>-->
+                                            </div>
+                                        </div>
+                                        <div class="form-group m-form__group row">
+                                            <label class="col-xl-3 col-lg-3 col-form-label">
+                                                * Date:
+                                            </label>
+                                            <div class="col-xl-9 col-lg-9">
+                                                <input type="text" name="date" class="form-control m-input" id="m_datepicker_6" />
+                                                <!--<input type="email" name="email" class="form-control m-input" placeholder="" value="nick.stone@gmail.com">
+                                                <span class="m-form__help">
+                                                    We'll never share your email with anyone else
+                                                </span>-->
+                                            </div>
+                                        </div>
+                                        <div class="form-group m-form__group row">
+                                            <label class="col-xl-3 col-lg-3 col-form-label">
+                                                * Time:
+                                            </label>
+                                            <div class="col-xl-9 col-lg-9">
+                                                <div class="m-radio-inline">
+                                                    <label class="m-radio m-radio--solid m-radio--brand">
+                                                        <input type="radio" name="account_group" checked="" value="1">
+                                                        8:00am
+                                                        <span></span>
+                                                    </label>
+                                                    <label class="m-radio m-radio--solid m-radio--brand">
+                                                        <input type="radio" name="account_group" checked="" value="2">
+                                                        8:20am
+                                                        <span></span>
+                                                    </label>
+                                                    <label class="m-radio m-radio--solid m-radio--brand">
+                                                        <input type="radio" name="account_group" checked="" value="3">
+                                                        8:40am
+                                                        <span></span>
+                                                    </label>
+                                                    <label class="m-radio m-radio--solid m-radio--brand">
+                                                        <input type="radio" name="account_group" checked="" value="4">
+                                                        9:00am
+                                                        <span></span>
+                                                    </label>
+                                                    <label class="m-radio m-radio--solid m-radio--brand">
+                                                        <input type="radio" name="account_group" checked="" value="1">
+                                                        8:00am
+                                                        <span></span>
+                                                    </label>
+                                                    <label class="m-radio m-radio--solid m-radio--brand">
+                                                        <input type="radio" name="account_group" checked="" value="2">
+                                                        8:20am
+                                                        <span></span>
+                                                    </label>
+                                                    <label class="m-radio m-radio--solid m-radio--brand">
+                                                        <input type="radio" name="account_group" checked="" value="3">
+                                                        8:40am
+                                                        <span></span>
+                                                    </label>
+                                                    <label class="m-radio m-radio--solid m-radio--brand">
+                                                        <input type="radio" name="account_group" checked="" value="4">
+                                                        9:00am
+                                                        <span></span>
+                                                    </label>
+                                                </div>
+                                                <!--<span class="m-form__help">
+                                                    Please select user group
+                                                </span>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end: Form Wizard Step 1-->
+                        <!--begin: Form Wizard Step 2-->
+                        <div class="m-wizard__form-step" id="m_wizard_form_step_2">
+                            <div class="row">
+                                <div class="col-xl-8 offset-xl-2">
+                                    <div class="m-form__section m-form__section--first">
+                                        <div class="m-form__heading">
+                                            <h3 class="m-form__heading-title">
+                                                Customer Details
+                                            </h3>
+                                        </div>
+                                        <div class="form-group m-form__group row">
+                                            <label class="col-xl-3 col-lg-3 col-form-label">
+                                                * First Name:
+                                            </label>
+                                            <div class="col-xl-9 col-lg-9">
+                                                <input type="text" name="fname" class="form-control m-input" placeholder="" value="">
+                                                <!--<span class="m-form__help">
+                                                    Please enter your first and last names
+                                                </span>-->
+                                            </div>
+                                        </div>
+                                        <div class="form-group m-form__group row">
+                                            <label class="col-xl-3 col-lg-3 col-form-label">
+                                                * Last Name:
+                                            </label>
+                                            <div class="col-xl-9 col-lg-9">
+                                                <input type="text" name="lname" class="form-control m-input" placeholder="" value="">
+                                                <!--<span class="m-form__help">
+                                                    Please enter your first and last names
+                                                </span>-->
+                                            </div>
+                                        </div>
+                                        <div class="form-group m-form__group row">
+                                            <label class="col-xl-3 col-lg-3 col-form-label">
+                                                * Mobile Phone:
+                                            </label>
+                                            <div class="col-xl-9 col-lg-9">
+                                                <input type="text" name="mobile" class="form-control m-input" placeholder="" value="">
+                                                <!--<div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">
+                                                            <i class="la la-phone"></i>
+                                                        </span>
+                                                    </div>
+                                                    <input type="text" name="phone" class="form-control m-input" placeholder="" value="1-541-754-3010">
+                                                </div>
+                                                <span class="m-form__help">
+                                                    Enter your valid phone in US phone format. E.g: 1-541-754-3010
+                                                </span>-->
+                                            </div>
+                                        </div>
+                                        <div class="form-group m-form__group row">
+                                            <label class="col-xl-3 col-lg-3 col-form-label">
+                                                * Email:
+                                            </label>
+                                            <div class="col-xl-9 col-lg-9">
+                                                <input type="text" name="email" class="form-control m-input" />
+                                                <!--<input type="email" name="email" class="form-control m-input" placeholder="" value="nick.stone@gmail.com">
+                                                <span class="m-form__help">
+                                                    We'll never share your email with anyone else
+                                                </span>-->
+                                            </div>
+                                        </div>
+                                        <div class="form-group m-form__group row">
+                                            <label class="col-xl-3 col-lg-3 col-form-label">
+                                                * Addess:
+                                            </label>
+                                            <div class="col-xl-9 col-lg-9">
+                                                <input type="text" name="add1" class="form-control m-input" />
+                                                <input type="text" name="add2" class="form-control m-input" />
+                                                <input type="text" name="add3" class="form-control m-input" />
+                                                <!--<input type="email" name="email" class="form-control m-input" placeholder="" value="nick.stone@gmail.com">
+                                                <span class="m-form__help">
+                                                    We'll never share your email with anyone else
+                                                </span>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end: Form Wizard Step 2-->
+                        <!--begin: Form Wizard Step 3-->
+                        <div class="m-wizard__form-step" id="m_wizard_form_step_3">
+                            <div class="row">
+                                <div class="col-xl-8 offset-xl-2">
+                                    <div class="m-form__section m-form__section--first">
+                                        <div class="m-form__heading">
+                                            <h3 class="m-form__heading-title">
+                                                Login / Create New Account
+                                            </h3>
+                                        </div>
+                                        <div class="form-group m-form__group row">
+                                            <label class="col-xl-3 col-lg-3 col-form-label">
+                                                * User Name:
+                                            </label>
+                                            <div class="col-xl-9 col-lg-9">
+                                                <input type="text" name="fname" class="form-control m-input" placeholder="" value="email@email.com" readonly>
+                                                <!--<span class="m-form__help">
+                                                    Please enter your first and last names
+                                                </span>-->
+                                            </div>
+                                        </div>
+                                        <div class="form-group m-form__group row">
+                                            <label class="col-xl-3 col-lg-3 col-form-label">
+                                                * Password:
+                                            </label>
+                                            <div class="col-xl-9 col-lg-9">
+                                                <input type="text" name="lname" class="form-control m-input" placeholder="" value="">
+                                                <!--<span class="m-form__help">
+                                                    Please enter your first and last names
+                                                </span>-->
+                                            </div>
+                                        </div>
+                                        <div class="form-group m-form__group row">
+                                            <label class="col-xl-3 col-lg-3 col-form-label">
+                                                * Confirm Password:
+                                            </label>
+                                            <div class="col-xl-9 col-lg-9">
+                                                <input type="text" name="mobile" class="form-control m-input" placeholder="" value="">
+                                                <!--<div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">
+                                                            <i class="la la-phone"></i>
+                                                        </span>
+                                                    </div>
+                                                    <input type="text" name="phone" class="form-control m-input" placeholder="" value="1-541-754-3010">
+                                                </div>
+                                                <span class="m-form__help">
+                                                    Enter your valid phone in US phone format. E.g: 1-541-754-3010
+                                                </span>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end: Form Wizard Step 3-->
+                        <!--begin: Form Wizard Step 4-->
+                        <div class="m-wizard__form-step" id="m_wizard_form_step_4">
+                            <div class="row">
+                                <div class="col-xl-8 offset-xl-2">
+                                    <div class="m-form__section m-form__section--first">
+                                        <div class="m-form__heading">
+                                            <h3 class="m-form__heading-title">
+                                                Appointment Cancellation Policy
+                                            </h3>
+                                        </div>
+                                        <div class="row">
+                                            <label class="col-form-label" style="white-space:pre-wrap;">
+                                                IMPORTANT : Please READ and UNDERSTAND our Appointment Cancellation Policy before you PRESS MAKE APPOINTMENT !!
+
+                                                NEW CHALLENGE
+                                                WHY CHOOSE US ? SERVICES GUARANTEE FROM US
+                                                NEW CHALLENGE from us : GENDER COMFIRMATION CHALLENGE and FACE CHALLENGE
+                                                - FOC if fail to capture baby face
+                                                - gender comfirmation challenge , if wrong we FULLY REFUND
+
+                                                HOW TO JOIN
+                                                - fetus must be 22 week above
+                                                - get the signature and name of sonographer on duties and write down the gender, date scan , location scan behind the printed simple report
+                                                - get the clinic receipt (photostate, or hp capture also can as your copy)
+                                                ONCE BABY DELIVER
+                                                if baby gender is correct ~ as appreciation of the service that we gave we hope customer can give us good comment and submit your baby BEFORE and AFTER 4d scan picture at facebook album
+                                                if baby gender wrong ~~ you can claim FULLY REFUND that you had pay on that day ~ keep your clinic receipt plus show us the printed simple report that we have sign ~~
+
+
+                                                ====== Our appointmentis still based on FIRST COME FIRST SERVE BASIS even you had book your time ====== , please reserve at least 1-2hour you will be in the clinic or hospital for scan services.
+
+                                                REMINDER : 5D 6D SCAN MALAYSIA Packages offer are valid for ONLINE BOOKING customer only. Online Booking customer will be scanned by our well trained Sonographers who are specialized in 3D 4D 5D 6D SCAN. Please DO NOT CALL clinic to change your scan time as you might scan with the in house doctor and not by our sonographer, quality of image is NOT GUARANTEE and if failed to see baby face FREE OF CHAGARGE NOT AVAILABLE if you scan by the in house doctor eventhough you had book ONLINE. Please sms 0176202933 if you wanted to change your time. Walk-in customer will be charged according to the respective KLINIK / HOSPITAL normal rate and might not scan by our sonographer as well.
+
+                                                PLEASE TAKE NOTE the sonographer name that on duties by follow the schedule.
+
+
+
+
+                                                ######## -------- APPOINTMENT CANCELATION POLICY -------########
+
+                                                HOW TO CANCEL YOUR APPOINTMENT?
+                                                1) You may cancel your appointment via http://goo.gl/6HpI8 by your registered account.
+                                                2) Login to your registered account with your username and password. You can retrieve your username and password by your appointment notification email.
+                                                3) Click on the appointment slot that you had booked, you can re-schedule or cancel the appointment by yourself by clicking the "Re-Schedule" or "Cancel" button on the right column.
+                                                4) Once your appointment been cancelled, you will received a appointment cancellation email. Your appointment slot will be released again for booking.
+
+                                                Else you can cancel your appointment manually by SMS to 017-620 2933. Please inform us the following information about your appointment :
+
+                                                1) Your Name :
+                                                2) Date of Appointment :
+                                                3) Time of Appointment :
+                                                4) Location of Appointment :
+                                                5) Your Mobile Number :
+                                                6) Your Email Address :
+
+                                                You will received a notification email about your appointment cancellation.
+
+                                                Please be informed that 5d 6d Scan Malaysia reserved the right to ignore and reject any customer who has violated your online appointment system or appointment cancellation policy in purpose!
+
+
+                                                ######## ------- End of APPOINTMENT CANCELATION POLICY --------########
+
+
+
+                                                ######## ------- General Appointment Booking Information ----------########
+
+                                                1) Please call the following clinic contact number in case asking for route direction: (only call for direction not call for change appt time, change appt time and date please SMS to 0176202933 as our services is different from the clinic in term of price, sonographer, image quality
+                                                - Ampang : 603-42927917
+                                                - Bangi : 603-89129969
+                                                - Kota Damansara : 603-6157 8595
+                                                - Puchong Jaya : 603-58834338
+                                                - Seri Kembangan : 603-8945 8414
+                                                - Shah Alam : 60 3-5519 4319
+                                                - Kepong : 603-62724086
+                                                - Klang : 603-5162 5622
+                                                - Cheras : 60 3-9011 6801
+                                                - Kelana jaya : 0164383366 / 0176202933
+
+
+                                                2) Our Scan service will be performed by a certified and well-trained sonographer either JEZZLYN ,CELYNN, SHANICE, ADA , IRENE When you reach the clinic , please inform the clinic registration staff that you have booked a 3D/4D Scan appointment with JEZZLYN, CELYNN, SHANICE, ADA, IRENE . You are advised to print and show your booking email OR flashout your hp about the booking email to the registration staff, especially for SCAN SHAH ALAM customer where you will be mixed with the clinic walk-in customer. You might be registered wrongly and treat as walk-in customer without the Online Booking benefits and offers. Only Online Booking customers are entitle for 3D 4D 5D 6D SCAN MALAYSIA Packages offer.
+
+                                                3) 3D/4D Scan Malaysia Business Schedule will be released and updated on weekly basis. Normally the booking slots will be release 1 week before the available booking slot. Please Find Us on FACEBOOK : http://www.facebook.com/pages/3D-4D-scan-Malaysia/120155484710450 for schedule regular update.
+
+                                                Our Current Business Schedule: (sometimes it might change due to sonographer availability, please refer latest weekly schedule update at FACEBOOK
+
+                                                Please refer facebook for latest schedule.
+                                                ***** KL/ SELANGOR******
+                                                Every Monday :
+                                                Miss jezzlyn - kelana jaya (morning)
+                                                Miss Celynn - kelana jaya (after 2pm ) , PUCHONG JAYA (night session)
+                                                Miss Ada - Cheras
+
+                                                Every Tuesday :
+                                                Miss Celynn - Bangi
+                                                Miss shanice - kelana jaya (morning)
+                                                Miss Jezzlyn - KOTA DAMANSARA / sg buloh
+                                                miss irene - kelana jaya (night session)
+
+                                                Every Wednesday :
+                                                Miss Jezzlyn -AMPANG
+                                                Miss celynn - kelana jaya (night session)
+
+                                                Every Thursday :
+                                                Miss Jezzlyn -kelana jaya (morning session) , kota damansara/ sg buloh (night session)
+                                                Miss celynn - Puchong
+                                                miss shanice - kelana jaya (night session)
+                                                miss irene - seri kembangan
+
+                                                Every Friday :
+                                                Miss Celynn -AMPANG
+                                                Miss Jezzlyn - kelana jaya (morning session)
+                                                miss irene - kelana jaya (night session)
+
+                                                Every Saturday :
+                                                Miss Jezzlyn - AMPANG
+                                                Miss Celynn - KLANG / PUCHONG
+                                                Miss Shanice - KOTA DAMANSARA / SG BULOH
+                                                Miss Ada - CHERAS
+                                                Miss irene - kelana jaya
+
+                                                Every Sunday :
+                                                Miss Jezzlyn - SHAH ALAM
+                                                Miss Celynn -BANGI
+                                                Miss Shanice - kelana jaya or KOTA DAMANSARA / SG BULOH
+                                                Miss Irene - kelana jaya or SERI KEMBANGAN
+
+
+                                                4) Normally for 3D/4D Scan, each session will takes about 20-30 minutes. For 2D Details Scan ( accept 20-25week baby only) + 3D/4D Scan, it will takes about 40-60 minutes. Please book 2 TIME SLOT for 2D Details + 3D/4D Scan that are available. However it depend on the baby condition, if the baby cooperate well it may takes less time or it might increase the scanning time if the baby don't show up his / her face.
+
+                                                5) For appointment booking, PLEASE WAIT FOR AT LEAST 6 HOUR FOR APPOINTMENT CONFIRMATION EMAIL. As usual if you are able to book an empty slot your appointment will be confirmed. If you want to spped up the appointment confirmation on the same day, please notify us about your appointment booking at 0176202933. We will confirm you appointment manually. Please check you email spam box if you have not receive any email from us once you have make an appontment booking. Under normal circumstances, you will received notification email after you have make an booking; confirmation email once your appointment booking been confirmed and cancellation email if your appointment been cancelled by yourself or 3D/4D Scan Malaysia Administrator.
+
+                                                6) Our appointment booking is base on "FIRST COME FIRST SERVE BASIS". However the actual scanning time might be delayed, for example your appointment slot is booked at 7.20pm, you can come in between 7pm to 8pm.. We apologize for any delaying and any inconvenience cause.
+
+                                                7)
+                                                Generally for Single Pregnancy Charges Rate are as follow:
+                                                2d growth scan (4-40week) RM50
+                                                NT scan with 3d scan (11-13week) RM120
+                                                3d 4d scan or 3d 4d hd/5d scan (certain location) (22week above) RM120 ,
+                                                2d full detail scan (20-24week) RM150 ;80-90% accuracy for physical anomaly , not for checking chromosome anomaly like down sindrom.
+                                                2d partial detail scan (25-30week) RM130 ; 50-60% accuracy for physical anomaly , no finger counting, no brain measurement due to baby saiz.
+                                                3d 4d scan + 2d full detail scan (20-24week) RM220
+                                                3d 4d scan + 2d partial detail scan (25-30week) RM180
+
+                                                new 6d scan/5d cine at kelana jaya only
+                                                promotion : weekday 3d 4d hd 5d 6d scan RM130, weekend RM150 (normal price RM250)
+                                                with full detail scan : weekday RM200 , weekend RM220 (normal price RM350)
+                                                check latest promo , we follow latest promo in facebook
+
+                                                For Twin Pregnancy Charges Rate are as follow:
+                                                2d growth scan (4-40week) RM60
+                                                NT scan with 3d scan (11-13week) RM180
+                                                3d 4d scan (22week above) RM130
+                                                2d full detail scan (20-24week) RM280 ;80-90% accuracy for physical anomaly , not for checking chromosome anomaly like down sindrom.
+                                                2d partial detail scan (25-30week) RM250 ; 50-60% accuracy for physical anomaly , no finger counting, no brain measurement due to baby saiz.
+                                                3d 4d scan + 2d full detail scan (20-24week) RM320
+                                                3d 4d scan + 2d partial detail scan (25-30week) RM300
+
+                                                take note : please check your CD once receive , we only able to keep the data for 3days , please inform us immediately if cant open the cd due to the machine cant save too many images. If data have be deleted after 3 days, no repeat scan will be done.
+
+
+                                                8) Please take note that our scan result could not be used in INSURANCE purpose. Only a registered GYNECOLOGIST or OBSTETRICIAN is eligible to fill in the Insurance form. However, it could be arrange , please SMS 0176202933 for more detail.
+
+                                                9) The suggested weeks for 3D/4D Scan as as follow:
+                                                - 1st Scan: (11-13weeks):
+                                                you can do your Nuchal transluciency (NT scan) to check the fluid from the neck fluid with 3D together.
+
+                                                - 2nd Scan: (20-24 weeks):
+                                                You are advisable doing full detail scan to check baby physical anomaly which is 80-90% accuracy. However, this test is not checking choromosome anomaly such as down sindrom. Some parent would like to do 2times 3d 4d scan would like to take 3d 4d scan with 2d full detail scan. Usually the first 3d scan is 20-24week , second 3d scan will be around 28-32week. During this time, your baby in 3d 4d scan will look abit skinny but during this time you able to see full body , hand , leg movement during this stage, its quite cute to see the baby movement but not the face yet.
+
+                                                - 3rd Scan: ( 25-35 weeks):
+                                                3d 4d scan more on baby face as the baby look more chubby, but leg and hand scan depend on the liquour enough or not. If you have miss the chance to scan full detail scan, you can do partial detail scan (25-30week)which only can detect 50-60% physical anomaly. For partial detail scan, no finger/toe counting , no brain measurement , spine depend on the water level. During this stage, we mainly can check the face , scan thru brain , heart , abdomen , all leg/ hand bone without finger counting etc.
+
+                                                - 4th Scan: (35week above)
+                                                Harder to scan depend on amniotic fluid only.. The chances to take a bit low compare to less than 32wk, but the baby will look more cubby... if cant see the baby face, there is no charges apply, so might can have a try..
+
+                                                10) These are the LIMITATIONS which will determine the quality of the Scan result like getting a nice BABY FACE:
+                                                - Amniotic fluid (air ketuban) must be enough for the scan where at least a layer of water in front of the baby face, must have a space on top of the baby face.
+                                                - No umbilical cord (tali pusat) or placenta block on top of the baby to get a nice view of the baby face.
+                                                - Baby position, baby could not be looking downward or side view. In order to get baby full face, baby must be facing up and not facing down or side way.
+                                                - fat layer of the mother tummy aso will affected the scan.... The thicker the abdominal layer, tbe harder the penetration of the ultrasound.
+
+                                                10) different type of machine giving different type of outcome and quality of the picture , below is the information of the machine brand
+                                                KL/SELANGOR
+                                                a) Ampang = GE voluson S6
+                                                b) Bangi = GE voluson S6
+                                                c) Cheras = Ecube 7
+                                                d) Kota damansara = MINDRAY DC7
+                                                e) Puchong = GE voluson 730pro
+                                                f) Shah alam = GE voluson S8
+                                                g) Seri kembangan = MINDRAY DC7
+                                                h) Klang = GE voluson S6
+                                                i) kepong = MINDRAY DC7
+                                                j) kelana jaya = SAMSUNG WS80A
+
+
+                                                ######## ------ THE END ---------- THANK YOU!-------------########
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end: Form Wizard Step 4-->
+                        <!--begin: Form Wizard Step 4-->
+                        <div class="m-wizard__form-step" id="m_wizard_form_step_5">
+                            <div class="row">
+                                <div class="col-xl-8 offset-xl-2">
+                                    <div class="m-form__section m-form__section--first">
+                                        <div class="m-form__heading">
+                                            <h3 class="m-form__heading-title">
+                                                Confirmation
+                                            </h3>
+                                        </div>
+                                        <div class="form-group m-form__group row">
+                                            <label class="col-xl-3 col-lg-3 col-form-label">
+                                                Reference No:
+                                            </label>
+                                            <div class="col-xl-9 col-lg-9">
+                                                <input type="text" name="ref" class="form-control m-input" placeholder="" value="0000001" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-group m-form__group row">
+                                            <label class="col-xl-3 col-lg-3 col-form-label">
+                                                Location
+                                            </label>
+                                            <div class="col-xl-9 col-lg-9">
+                                                <input type="text" name="ref" class="form-control m-input" placeholder="" value="Kelana Jaya" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-group m-form__group row">
+                                            <label class="col-xl-3 col-lg-3 col-form-label">
+                                                Package
+                                            </label>
+                                            <div class="col-xl-9 col-lg-9">
+                                                <input type="text" name="ref" class="form-control m-input" placeholder="" value="2D Detail Scan" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-group m-form__group row">
+                                            <label class="col-xl-3 col-lg-3 col-form-label">
+                                                Date &amp; time:
+                                            </label>
+                                            <div class="col-xl-9 col-lg-9">
+                                                <input type="text" name="ref" class="form-control m-input" placeholder="" value="22/04/2018 8:00am" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-group m-form__group row">
+                                            <label class="col-xl-3 col-lg-3 col-form-label">
+                                                Name:
+                                            </label>
+                                            <div class="col-xl-9 col-lg-9">
+                                                <input type="text" name="ref" class="form-control m-input" placeholder="" value="Kang Wei (email@email.com)" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-group m-form__group row">
+                                            <label class="col-xl-3 col-lg-3 col-form-label">
+                                                Status:
+                                            </label>
+                                            <div class="col-xl-9 col-lg-9">
+                                                <input type="text" name="ref" class="form-control m-input" placeholder="" value="Pending Confirmation" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-8 offset-xl-2">
+                                    <div class="m-separator m-separator--dashed m-separator--lg"></div>
+                                    <div class="m-form__section">
+                                        <p>Thank you for making appointment. Please contact abcd (021412323) for further enquiry.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end: Form Wizard Step 4-->
+                    </div>
+                    <!--end: Form Body -->
+                    <!--begin: Form Actions -->
+                    <div class="m-portlet__foot m-portlet__foot--fit m--margin-top-40">
+                        <div class="m-form__actions">
+                            <div class="row">
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-4 m--align-left">
+                                    <a href="#" class="btn btn-secondary m-btn m-btn--custom m-btn--icon" data-wizard-action="prev">
+                                        <span>
+                                            <i class="la la-arrow-left"></i>
+                                            &nbsp;&nbsp;
+                                            <span>
+                                                Back
+                                            </span>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 m--align-right">
+                                    <a href="#" class="btn btn-primary m-btn m-btn--custom m-btn--icon" data-wizard-action="submit">
+                                        <span>
+                                            <i class="la la-check"></i>
+                                            &nbsp;&nbsp;
+                                            <span>
+                                                Complete
+                                            </span>
+                                        </span>
+                                    </a>
+                                    <a href="#" class="btn btn-warning m-btn m-btn--custom m-btn--icon" data-wizard-action="next">
+                                        <span>
+                                            <span>
+                                                Save & Continue
+                                            </span>
+                                            &nbsp;&nbsp;
+                                            <i class="la la-arrow-right"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="col-lg-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end: Form Actions -->
+                </form>
+            </div>
+            <!--end: Form Wizard Form-->
+        </div>
+        <!--end: Form Wizard-->
+    </div>
+    <!--End::Main Portlet-->
+</div>
